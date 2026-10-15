@@ -1,0 +1,1414 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>أحمد | الموقع الشخصي</title>
+
+<!-- الخط -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<!-- الأيقونات -->
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+<style>
+
+/* =========================
+   الإعدادات العامة
+========================= */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    scroll-behavior:smooth;
+}
+
+:root{
+    --bg:#07111f;
+    --card:#101d30;
+    --card2:#0c1728;
+    --text:#ffffff;
+    --muted:#aeb9c8;
+    --primary:#00d9ff;
+    --secondary:#7c3aed;
+    --border:rgba(255,255,255,.09);
+}
+
+body{
+    font-family:"Cairo",Arial,sans-serif;
+    background:var(--bg);
+    color:var(--text);
+    line-height:1.8;
+    transition:.3s;
+}
+
+body.light{
+    --bg:#f4f7fb;
+    --card:#ffffff;
+    --card2:#eef3f8;
+    --text:#111827;
+    --muted:#596579;
+    --border:rgba(0,0,0,.10);
+}
+
+a{
+    text-decoration:none;
+    color:inherit;
+}
+
+button{
+    font-family:inherit;
+}
+
+.container{
+    width:92%;
+    max-width:1150px;
+    margin:auto;
+}
+
+section{
+    padding:90px 0;
+}
+
+
+/* =========================
+   الهيدر
+========================= */
+
+header{
+    position:fixed;
+    top:0;
+    right:0;
+    width:100%;
+    height:72px;
+    z-index:1000;
+
+    background:rgba(7,17,31,.88);
+    backdrop-filter:blur(15px);
+
+    border-bottom:1px solid var(--border);
+}
+
+body.light header{
+    background:rgba(255,255,255,.90);
+}
+
+.nav{
+    height:72px;
+
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+}
+
+.logo{
+    font-size:27px;
+    font-weight:800;
+}
+
+.logo span{
+    color:var(--primary);
+}
+
+.nav-links{
+    display:flex;
+    gap:24px;
+    align-items:center;
+}
+
+.nav-links a{
+    color:var(--muted);
+    font-weight:700;
+    transition:.3s;
+}
+
+.nav-links a:hover{
+    color:var(--primary);
+}
+
+.nav-links i{
+    margin-left:5px;
+}
+
+.actions{
+    display:flex;
+    gap:8px;
+}
+
+.icon-btn,
+.menu-btn{
+    width:42px;
+    height:42px;
+
+    border:1px solid var(--border);
+    border-radius:10px;
+
+    background:var(--card);
+    color:var(--text);
+
+    cursor:pointer;
+}
+
+.menu-btn{
+    display:none;
+}
+
+
+/* =========================
+   الرئيسية
+========================= */
+
+.hero{
+    min-height:100vh;
+
+    display:flex;
+    align-items:center;
+
+    padding-top:120px;
+
+    background:
+    radial-gradient(
+        circle at 15% 20%,
+        rgba(0,217,255,.13),
+        transparent 30%
+    ),
+    radial-gradient(
+        circle at 85% 75%,
+        rgba(124,58,237,.15),
+        transparent 30%
+    );
+}
+
+.hero-grid{
+    display:grid;
+
+    grid-template-columns:1fr 330px;
+
+    gap:70px;
+
+    align-items:center;
+}
+
+.badge{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+
+    padding:7px 15px;
+
+    background:var(--card);
+
+    border:1px solid var(--border);
+
+    border-radius:50px;
+
+    color:var(--primary);
+
+    font-weight:700;
+}
+
+.hero h1{
+    font-size:clamp(45px,7vw,75px);
+    line-height:1.2;
+
+    margin:15px 0;
+}
+
+.hero h1 span{
+    color:var(--primary);
+}
+
+.hero h2{
+    color:var(--muted);
+    font-size:25px;
+    margin-bottom:15px;
+}
+
+.hero p{
+    color:var(--muted);
+    font-size:17px;
+    max-width:650px;
+}
+
+
+/* =========================
+   الأزرار
+========================= */
+
+.buttons{
+    display:flex;
+    gap:12px;
+    flex-wrap:wrap;
+    margin-top:28px;
+}
+
+.btn{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    gap:9px;
+
+    padding:12px 23px;
+
+    border-radius:12px;
+
+    font-weight:800;
+
+    transition:.3s;
+}
+
+.btn:hover{
+    transform:translateY(-4px);
+}
+
+.primary{
+    background:linear-gradient(
+        135deg,
+        var(--primary),
+        #38bdf8
+    );
+
+    color:#001018;
+}
+
+.outline{
+    border:1px solid var(--primary);
+    color:var(--primary);
+}
+
+.outline:hover{
+    background:var(--primary);
+    color:#001018;
+}
+
+
+/* =========================
+   الصورة
+========================= */
+
+.profile{
+    width:310px;
+    height:310px;
+
+    padding:6px;
+
+    border-radius:50%;
+
+    margin:auto;
+
+    background:linear-gradient(
+        135deg,
+        var(--primary),
+        var(--secondary)
+    );
+
+    box-shadow:
+    0 0 60px rgba(0,217,255,.25);
+}
+
+.profile img{
+    width:100%;
+    height:100%;
+
+    object-fit:cover;
+
+    border-radius:50%;
+
+    border:5px solid var(--bg);
+
+    display:block;
+}
+
+
+/* =========================
+   عناوين الأقسام
+========================= */
+
+.section-title{
+    text-align:center;
+    margin-bottom:45px;
+}
+
+.section-title h2{
+    font-size:38px;
+}
+
+.section-title span{
+    color:var(--primary);
+}
+
+.section-title p{
+    color:var(--muted);
+}
+
+
+/* =========================
+   عني
+========================= */
+
+.about-box{
+    background:var(--card);
+
+    border:1px solid var(--border);
+
+    border-radius:20px;
+
+    padding:40px;
+
+    text-align:center;
+
+    box-shadow:
+    0 15px 40px rgba(0,0,0,.12);
+}
+
+.about-icon{
+    color:var(--primary);
+    font-size:50px;
+    margin-bottom:15px;
+}
+
+.about-box h3{
+    margin-bottom:10px;
+}
+
+.about-box p{
+    color:var(--muted);
+    font-size:17px;
+}
+
+
+/* =========================
+   المهارات
+========================= */
+
+.skills{
+    display:grid;
+
+    grid-template-columns:1fr 1fr;
+
+    gap:20px;
+}
+
+.skill{
+    background:var(--card);
+
+    border:1px solid var(--border);
+
+    border-radius:16px;
+
+    padding:23px;
+
+    transition:.3s;
+}
+
+.skill:hover{
+    transform:translateY(-5px);
+    border-color:var(--primary);
+}
+
+.skill-top{
+    display:flex;
+    justify-content:space-between;
+
+    margin-bottom:10px;
+
+    font-weight:700;
+}
+
+.skill-top i{
+    color:var(--primary);
+    margin-left:7px;
+}
+
+.progress{
+    width:100%;
+    height:9px;
+
+    background:var(--card2);
+
+    border-radius:50px;
+
+    overflow:hidden;
+}
+
+.progress span{
+    display:block;
+
+    height:100%;
+
+    border-radius:50px;
+
+    background:linear-gradient(
+        90deg,
+        var(--primary),
+        var(--secondary)
+    );
+}
+
+
+/* =========================
+   المشاريع
+========================= */
+
+.projects{
+    display:grid;
+
+    grid-template-columns:
+    repeat(3,1fr);
+
+    gap:20px;
+}
+
+.project{
+    background:var(--card);
+
+    border:1px solid var(--border);
+
+    border-radius:20px;
+
+    padding:28px;
+
+    transition:.3s;
+}
+
+.project:hover{
+    transform:translateY(-8px);
+    border-color:var(--primary);
+}
+
+.project-icon{
+    width:60px;
+    height:60px;
+
+    display:grid;
+    place-items:center;
+
+    border-radius:15px;
+
+    background:rgba(0,217,255,.1);
+
+    color:var(--primary);
+
+    font-size:25px;
+
+    margin-bottom:18px;
+}
+
+.project h3{
+    margin-bottom:8px;
+}
+
+.project p{
+    color:var(--muted);
+    margin-bottom:18px;
+}
+
+.project-link{
+    color:var(--primary);
+    font-weight:700;
+}
+
+
+/* =========================
+   التواصل
+========================= */
+
+.contact-box{
+    background:var(--card);
+
+    border:1px solid var(--border);
+
+    border-radius:20px;
+
+    padding:40px;
+
+    text-align:center;
+}
+
+.contact-box > p{
+    color:var(--muted);
+}
+
+.contact-buttons{
+    display:flex;
+    justify-content:center;
+
+    gap:12px;
+
+    margin-top:25px;
+
+    flex-wrap:wrap;
+}
+
+.social{
+    display:flex;
+    justify-content:center;
+
+    gap:12px;
+
+    margin-top:25px;
+}
+
+.social a{
+    width:46px;
+    height:46px;
+
+    display:grid;
+    place-items:center;
+
+    border-radius:50%;
+
+    background:var(--card2);
+
+    border:1px solid var(--border);
+
+    color:var(--muted);
+
+    transition:.3s;
+}
+
+.social a:hover{
+    color:var(--primary);
+    border-color:var(--primary);
+    transform:translateY(-5px);
+}
+
+
+/* =========================
+   واتساب
+========================= */
+
+.whatsapp{
+    position:fixed;
+
+    left:22px;
+    bottom:22px;
+
+    width:60px;
+    height:60px;
+
+    display:grid;
+    place-items:center;
+
+    border-radius:50%;
+
+    background:#25d366;
+
+    color:#fff;
+
+    font-size:30px;
+
+    z-index:999;
+
+    box-shadow:
+    0 10px 35px rgba(37,211,102,.4);
+
+    transition:.3s;
+}
+
+.whatsapp:hover{
+    transform:scale(1.1);
+}
+
+
+/* =========================
+   الفوتر
+========================= */
+
+footer{
+    text-align:center;
+
+    padding:30px;
+
+    border-top:1px solid var(--border);
+
+    color:var(--muted);
+}
+
+footer span{
+    color:var(--primary);
+}
+
+
+/* =========================
+   حركة ظهور
+========================= */
+
+.fade{
+    animation:fadeUp .8s ease both;
+}
+
+@keyframes fadeUp{
+
+    from{
+        opacity:0;
+        transform:translateY(25px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+
+}
+
+
+/* =========================
+   الموبايل
+========================= */
+
+@media(max-width:850px){
+
+    .hero-grid{
+        grid-template-columns:1fr;
+        text-align:center;
+    }
+
+    .hero p{
+        margin:auto;
+    }
+
+    .profile{
+        width:240px;
+        height:240px;
+    }
+
+    .buttons{
+        justify-content:center;
+    }
+
+    .skills{
+        grid-template-columns:1fr;
+    }
+
+    .projects{
+        grid-template-columns:1fr;
+    }
+
+    .nav-links{
+        display:none;
+    }
+
+    .nav-links.open{
+        position:absolute;
+
+        top:72px;
+
+        right:4%;
+        left:4%;
+
+        display:flex;
+
+        flex-direction:column;
+
+        padding:20px;
+
+        background:var(--card);
+
+        border:1px solid var(--border);
+
+        border-radius:15px;
+    }
+
+    .menu-btn{
+        display:block;
+    }
+}
+
+@media(max-width:550px){
+
+    section{
+        padding:70px 0;
+    }
+
+    .hero h1{
+        font-size:45px;
+    }
+
+    .hero h2{
+        font-size:21px;
+    }
+
+    .buttons{
+        flex-direction:column;
+    }
+
+    .btn{
+        width:100%;
+    }
+
+    .section-title h2{
+        font-size:30px;
+    }
+
+}
+
+</style>
+</head>
+
+
+<body>
+
+
+<!-- =========================
+     الهيدر
+========================= -->
+
+<header>
+
+<div class="container nav">
+
+<a href="#home" class="logo">
+أحمد<span>.</span>
+</a>
+
+
+<nav class="nav-links" id="navLinks">
+
+<a href="#home">
+<i class="fa-solid fa-house"></i>
+الرئيسية
+</a>
+
+<a href="#about">
+<i class="fa-solid fa-user"></i>
+عني
+</a>
+
+<a href="#skills">
+<i class="fa-solid fa-code"></i>
+مهاراتي
+</a>
+
+<a href="#projects">
+<i class="fa-solid fa-laptop-code"></i>
+مشاريعي
+</a>
+
+<a href="#contact">
+<i class="fa-solid fa-envelope"></i>
+تواصل
+</a>
+
+</nav>
+
+
+<div class="actions">
+
+<button class="icon-btn" id="themeBtn">
+<i class="fa-solid fa-sun"></i>
+</button>
+
+<button class="menu-btn" id="menuBtn">
+<i class="fa-solid fa-bars"></i>
+</button>
+
+</div>
+
+</div>
+
+</header>
+
+
+
+<!-- =========================
+     الرئيسية
+========================= -->
+
+<section class="hero" id="home">
+
+<div class="container hero-grid">
+
+
+<div class="fade">
+
+<div class="badge">
+
+<i class="fa-solid fa-circle-check"></i>
+
+أهلاً بك في موقعي
+
+</div>
+
+
+<h1>
+
+أنا <span>أحمد</span>
+
+</h1>
+
+
+<h2>
+
+مطور مواقع ويب
+
+</h2>
+
+
+<p>
+
+أصمم وأطور مواقع ويب عصرية وسريعة
+ومتجاوبة مع الموبايل والكمبيوتر،
+وأهتم بتجربة المستخدم والتفاصيل.
+
+</p>
+
+
+<div class="buttons">
+
+<a href="#projects" class="btn primary">
+
+<i class="fa-solid fa-code"></i>
+
+شاهد مشاريعي
+
+</a>
+
+
+<a href="cv.pdf" download class="btn outline">
+
+<i class="fa-solid fa-file-arrow-down"></i>
+
+تحميل CV
+
+</a>
+
+</div>
+
+</div>
+
+
+
+<div class="profile fade">
+
+<!-- الصورة التي أرسلتها -->
+<img src="profile.jpg" alt="صورة أحمد">
+
+</div>
+
+
+</div>
+
+</section>
+
+
+
+<!-- =========================
+     عني
+========================= -->
+
+<section id="about">
+
+<div class="container">
+
+<div class="section-title">
+
+<h2>
+
+<span>من</span> أنا؟
+
+</h2>
+
+<p>
+
+نبذة عني
+
+</p>
+
+</div>
+
+
+<div class="about-box">
+
+<div class="about-icon">
+
+<i class="fa-solid fa-user-tie"></i>
+
+</div>
+
+<h3>
+
+أهلاً بك 👋
+
+</h3>
+
+<p>
+
+أنا أحمد، مهتم بتطوير وتصميم مواقع الويب.
+أحب بناء المواقع الحديثة والسريعة،
+وأعمل باستمرار على تطوير مهاراتي في البرمجة
+وتعلم تقنيات جديدة.
+
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================
+     المهارات
+========================= -->
+
+<section id="skills">
+
+<div class="container">
+
+<div class="section-title">
+
+<h2>
+
+<span>مهاراتي</span>
+
+</h2>
+
+<p>
+
+التقنيات التي أستخدمها
+
+</p>
+
+</div>
+
+
+<div class="skills">
+
+
+<div class="skill">
+
+<div class="skill-top">
+
+<span>
+<i class="fa-brands fa-html5"></i>
+HTML
+</span>
+
+<span>90%</span>
+
+</div>
+
+<div class="progress">
+<span style="width:90%"></span>
+</div>
+
+</div>
+
+
+
+<div class="skill">
+
+<div class="skill-top">
+
+<span>
+<i class="fa-brands fa-css3-alt"></i>
+CSS
+</span>
+
+<span>85%</span>
+
+</div>
+
+<div class="progress">
+<span style="width:85%"></span>
+</div>
+
+</div>
+
+
+
+<div class="skill">
+
+<div class="skill-top">
+
+<span>
+<i class="fa-brands fa-js"></i>
+JavaScript
+</span>
+
+<span>70%</span>
+
+</div>
+
+<div class="progress">
+<span style="width:70%"></span>
+</div>
+
+</div>
+
+
+
+<div class="skill">
+
+<div class="skill-top">
+
+<span>
+<i class="fa-solid fa-pen-ruler"></i>
+تصميم الواجهات
+</span>
+
+<span>80%</span>
+
+</div>
+
+<div class="progress">
+<span style="width:80%"></span>
+</div>
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================
+     المشاريع
+========================= -->
+
+<section id="projects">
+
+<div class="container">
+
+<div class="section-title">
+
+<h2>
+
+<span>مشاريعي</span>
+
+</h2>
+
+<p>
+
+بعض المشاريع والأعمال
+
+</p>
+
+</div>
+
+
+<div class="projects">
+
+
+<div class="project">
+
+<div class="project-icon">
+
+<i class="fa-solid fa-globe"></i>
+
+</div>
+
+<h3>
+
+موقع شخصي
+
+</h3>
+
+<p>
+
+موقع شخصي احترافي لعرض
+المعلومات والمهارات والمشاريع.
+
+</p>
+
+<a href="#contact" class="project-link">
+
+تواصل معي
+<i class="fa-solid fa-arrow-left"></i>
+
+</a>
+
+</div>
+
+
+
+<div class="project">
+
+<div class="project-icon">
+
+<i class="fa-solid fa-store"></i>
+
+</div>
+
+<h3>
+
+متجر إلكتروني
+
+</h3>
+
+<p>
+
+تصميم متجر إلكتروني حديث
+ومتجاوب مع جميع الأجهزة.
+
+</p>
+
+<a href="#contact" class="project-link">
+
+تواصل معي
+<i class="fa-solid fa-arrow-left"></i>
+
+</a>
+
+</div>
+
+
+
+<div class="project">
+
+<div class="project-icon">
+
+<i class="fa-solid fa-mobile-screen"></i>
+
+</div>
+
+<h3>
+
+تطبيق ويب
+
+</h3>
+
+<p>
+
+واجهة تطبيق ويب عصرية
+وسريعة وسهلة الاستخدام.
+
+</p>
+
+<a href="#contact" class="project-link">
+
+تواصل معي
+<i class="fa-solid fa-arrow-left"></i>
+
+</a>
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================
+     التواصل
+========================= -->
+
+<section id="contact">
+
+<div class="container">
+
+<div class="section-title">
+
+<h2>
+
+<span>تواصل</span> معي
+
+</h2>
+
+<p>
+
+يسعدني التواصل معك
+
+</p>
+
+</div>
+
+
+<div class="contact-box">
+
+<p>
+
+للتواصل معي يمكنك استخدام واتساب
+أو البريد الإلكتروني.
+
+</p>
+
+
+<div class="contact-buttons">
+
+
+<a
+href="https://wa.me/201283360647"
+target="_blank"
+class="btn primary"
+>
+
+<i class="fa-brands fa-whatsapp"></i>
+
+تواصل عبر واتساب
+
+</a>
+
+
+<a
+href="mailto:your@email.com"
+class="btn outline"
+>
+
+<i class="fa-solid fa-envelope"></i>
+
+البريد الإلكتروني
+
+</a>
+
+
+</div>
+
+
+
+<div class="social">
+
+
+<!-- ضع روابطك الحقيقية مكان # -->
+
+<a href="#" title="GitHub">
+
+<i class="fa-brands fa-github"></i>
+
+</a>
+
+
+<a href="#" title="Instagram">
+
+<i class="fa-brands fa-instagram"></i>
+
+</a>
+
+
+<a href="#" title="Facebook">
+
+<i class="fa-brands fa-facebook"></i>
+
+</a>
+
+
+<a href="#" title="Telegram">
+
+<i class="fa-brands fa-telegram"></i>
+
+</a>
+
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================
+     FOOTER
+========================= -->
+
+<footer>
+
+<p>
+
+© 2026 جميع الحقوق محفوظة -
+
+<span>أحمد</span>
+
+</p>
+
+</footer>
+
+
+
+<!-- =========================
+     زر واتساب
+========================= -->
+
+<a
+href="https://wa.me/201283360647"
+target="_blank"
+class="whatsapp"
+title="واتساب"
+>
+
+<i class="fa-brands fa-whatsapp"></i>
+
+</a>
+
+
+
+<!-- =========================
+     JavaScript
+========================= -->
+
+<script>
+
+/* قائمة الموبايل */
+
+const menuBtn =
+document.getElementById("menuBtn");
+
+const navLinks =
+document.getElementById("navLinks");
+
+menuBtn.onclick = function(){
+
+navLinks.classList.toggle("open");
+
+};
+
+
+/* إغلاق القائمة بعد الضغط */
+
+document
+.querySelectorAll(".nav-links a")
+.forEach(function(link){
+
+link.onclick = function(){
+
+navLinks.classList.remove("open");
+
+};
+
+});
+
+
+/* الوضع الليلي والفاتح */
+
+const themeBtn =
+document.getElementById("themeBtn");
+
+themeBtn.onclick = function(){
+
+document.body.classList.toggle("light");
+
+if(document.body.classList.contains("light")){
+
+themeBtn.innerHTML =
+'<i class="fa-solid fa-moon"></i>';
+
+}else{
+
+themeBtn.innerHTML =
+'<i class="fa-solid fa-sun"></i>';
+
+}
+
+};
+
+</script>
+
+</body>
+  </html>
